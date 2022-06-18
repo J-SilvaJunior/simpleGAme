@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Storage;
 
 namespace simpleGame
 {
@@ -8,7 +9,7 @@ namespace simpleGame
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-
+        private Color cl = Color.Black;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -32,17 +33,30 @@ namespace simpleGame
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            var kState = Keyboard.GetState();
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == 
+                ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             // TODO: Add your update logic here
-
+            /*
+            if (kState.IsKeyDown(Keys.Space))
+                cl = Color.White;
+            if (kState.IsKeyDown(Keys.G))
+                cl = Color.Green;
+            if (kState.IsKeyDown(Keys.S))
+                cl = Color.Silver;
+            if (kState.IsKeyDown(Keys.R))
+                cl = Color.Red;
+            if (kState.IsKeyDown(Keys.B))
+                cl = Color.Blue;
+            */
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(cl);
 
             // TODO: Add your drawing code here
 
