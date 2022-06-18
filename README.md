@@ -11,5 +11,5 @@ de seu antepassado como também aprimorando elas. Em este novo nome, criou dois 
   Stardew Valley <br>e Celeste.<br><img width="25%" src="https://upload.wikimedia.org/wikipedia/pt/e/e9/Celeste_capa.jpg"></img>
 <br><br>
 No momento, este é um projeto para aprender a usar da forma correta essa ferramenta.
-Se você, que está lendo isto, queira me passar uma visão ou um toque como posso melhorar o uso da ferramenta, sinta-se a vontade para me comunicar! <br>
+Se você, que está lendo isto, queira me passar uma visão ou um toque de como posso melhorar o uso da ferramenta, sinta-se a vontade para me comunicar! <br>
 <h1><p align="center">😁🤙🤙</p></h1>
