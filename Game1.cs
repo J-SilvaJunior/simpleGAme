@@ -79,17 +79,17 @@ namespace Game1Game
             _spriteBatch.Draw(shuttle,
                               new Vector2(450,240),
                               Color.White);
-            //Vector2 centroTexto = font.MeasureString("Olá mundo!") / 2;
+            Vector2 centroTexto = font.MeasureString("Ola mundo!") / 2;
 
             Vector2 posicaoCentral = new Vector2(Window.ClientBounds.Width  / 2,
                                                  Window.ClientBounds.Height / 2);
             
             _spriteBatch.DrawString(font,
-                                    "Olá Mundo!",
+                                    "Ola Mundo!",
                                     posicaoCentral,
                                     Color.White,
                                     0,
-                                    new Vector2(0,0),
+                                    centroTexto,
                                     1.0f,
                                     SpriteEffects.None,0.5f);
             

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/MonoGameStudy/simpleGAme/Content/testFont.spritefont</SourceFile>
-  <SourceTime>2022-06-19T12:57:29.1134176-03:00</SourceTime>
+  <SourceTime>2022-06-19T12:58:45.8551083-03:00</SourceTime>
   <DestFile>C:/MonoGameStudy/simpleGAme/Content/bin/DesktopGL/Content/testFont.xnb</DestFile>
-  <DestTime>2022-06-19T12:57:42.106629-03:00</DestTime>
+  <DestTime>2022-06-19T12:59:58.54548-03:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2020-08-10T13:17:54-03:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
