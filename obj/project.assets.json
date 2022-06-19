@@ -180,11 +180,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MonoGameStudy\\simpleGame\\simpleGame.csproj",
-      "projectName": "simpleGame",
-      "projectPath": "C:\\MonoGameStudy\\simpleGame\\simpleGame.csproj",
+      "projectUniqueName": "C:\\MonoGameStudy\\simpleGAme\\simpleGAme.csproj",
+      "projectName": "simpleGAme",
+      "projectPath": "C:\\MonoGameStudy\\simpleGAme\\simpleGAme.csproj",
       "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-      "outputPath": "C:\\MonoGameStudy\\simpleGame\\obj\\",
+      "outputPath": "C:\\MonoGameStudy\\simpleGAme\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

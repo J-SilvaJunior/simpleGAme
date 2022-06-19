@@ -1,15 +1,17 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 
-namespace simpleGame
+namespace Game1Game
 {
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Color cl = Color.Black;
+        Texture2D shuttle;
+        Texture2D stars;
+        Texture2D earth;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -27,7 +29,9 @@ namespace simpleGame
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            shuttle = Content.Load<Texture2D>("shuttle");
+            stars = Content.Load<Texture2D>("stars");
+            earth = Content.Load<Texture2D>("earth");
             // TODO: use this.Content to load your game content here
         }
 
@@ -35,7 +39,7 @@ namespace simpleGame
         {
             var kState = Keyboard.GetState();
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == 
-                ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+              ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             // TODO: Add your update logic here
@@ -59,7 +63,22 @@ namespace simpleGame
             GraphicsDevice.Clear(cl);
 
             // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(stars,
+                              new Rectangle(0,0,800,480),
+                              Color.White);
 
+            _spriteBatch.Draw(earth, 
+                              new Vector2(400,240),
+                              Color.White);
+            
+            _spriteBatch.Draw(shuttle,
+                              new Vector2(450,240),
+                              Color.White);
+            
+            
+            
+            _spriteBatch.End();
             base.Draw(gameTime);
         }
     }
