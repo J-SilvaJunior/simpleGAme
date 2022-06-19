@@ -50,3 +50,4 @@ C:\MonoGameStudy\simpleGAme\obj\Debug\netcoreapp3.1\simpleGAme.genruntimeconfig.
 C:\MonoGameStudy\simpleGAme\bin\Debug\netcoreapp3.1\Content\earth.xnb
 C:\MonoGameStudy\simpleGAme\bin\Debug\netcoreapp3.1\Content\shuttle.xnb
 C:\MonoGameStudy\simpleGAme\bin\Debug\netcoreapp3.1\Content\stars.xnb
+C:\MonoGameStudy\simpleGAme\bin\Debug\netcoreapp3.1\Content\testFont.xnb

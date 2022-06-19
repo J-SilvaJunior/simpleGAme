@@ -5,10 +5,12 @@
   <Config />
   <SourceFiles>
     <File>C:/MonoGameStudy/simpleGAme/Content/earth.png</File>
+    <File>C:/MonoGameStudy/simpleGAme/Content/testFont.spritefont</File>
     <File>C:/MonoGameStudy/simpleGAme/Content/shuttle.png</File>
     <File>C:/MonoGameStudy/simpleGAme/Content/stars.jpg</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
