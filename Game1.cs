@@ -14,21 +14,24 @@ namespace Game1Game
         private Texture2D shuttle;      //É a variável de Textura 2D para a Nave
         private Texture2D stars;        //É a variável de Textura 2D para o Background Estrelado
         private Texture2D earth;        //É a variável de Textura 2D para a terra
-        private SpriteFont font;        //
-        private Vector2 shuttlePos;     //
-        private float shuttleSpd;   //
+        private SpriteFont font;        //Variável que guarda uma fonte e seus caractéres na memória
+        private Vector2 shuttlePos;     //Posição da nave no espaço
+        private float shuttleSpd;       //
+        private float shuttleDrct = 2;       //
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            shuttlePos = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
+            Window.Title = "Aventuras do Mineirinho no Espaço Don Zellital";
         }
 
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            shuttleSpd = 1000f;
+            shuttleSpd = 500f;
             base.Initialize();
         }
 
@@ -75,9 +78,30 @@ namespace Game1Game
             {
                 case 'w':
                     shuttlePos.Y -= shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    if (shuttleDrct != 0)
+                    {
+                        if (shuttleDrct < 4)
+                        {
+                            shuttleDrct -= 1f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        }
+                        if (shuttleDrct > -0.001 && shuttleDrct < 0.001)
+                        {
+                            shuttleDrct = 0;
+                        }
+                        if (shuttleDrct > 7)
+                        {
+                            shuttleDrct -= 7;
+                            shuttleDrct *= -1;
+                        }
+                        if (shuttleDrct >=4)
+                        {
+                            shuttleDrct += 1f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        }
+                    }
                     break;                
                 case 'a':
                     shuttlePos.X -= shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
                     break;
                 case 's':
                     shuttlePos.Y += shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -112,11 +136,13 @@ namespace Game1Game
                               shuttlePos,
                               null,
                               Color.White,
-                              1,
+                              shuttleDrct,
                               new Vector2(shuttle.Width / 2, shuttle.Height / 2), 
                               Vector2.One,
                               SpriteEffects.None,
                               0f); 
+            
+            
             /*
             _spriteBatch.Draw(shuttle,
                               new Rectangle((int)posicaoCentral.X,
