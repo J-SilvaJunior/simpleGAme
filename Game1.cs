@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿//Este projeto é um estudo do XNA MonoGame 
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -6,7 +7,6 @@ namespace Game1Game
 {
     public class Game1 : Game
     {
-        
         private GraphicsDeviceManager _graphics;                        //Gerenciador de gráficos, é inicializado no construtor da classe.
                                                                         //
         private SpriteBatch _spriteBatch;                               //Desenhador de Sprite, é inicializado recebendo como argumento uma
