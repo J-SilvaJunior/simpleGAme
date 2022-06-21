@@ -49,7 +49,7 @@ namespace Game1Game
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            shuttlePos = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
+            
             
         }
 
@@ -59,6 +59,10 @@ namespace Game1Game
             shuttleSpd = 500f;
             base.Initialize();
             Window.Title = "Aventuras do Mineirinho no Espaço Don Zellital";
+            _graphics.PreferredBackBufferHeight = 720;
+            _graphics.PreferredBackBufferWidth = 1280;
+            _graphics.ApplyChanges();
+            shuttlePos = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
         }
 
         protected override void LoadContent()
@@ -81,63 +85,41 @@ namespace Game1Game
             // TODO: Add your update logic here
 
             //if (kState.IsKeyDown(Keys.Space))
-
-
-            if (kState.IsKeyDown(Keys.W))
-                ShuttleMove('w', gameTime);
-            
-            if (kState.IsKeyDown(Keys.S))
-                ShuttleMove('s', gameTime);
-
-            if (kState.IsKeyDown(Keys.A))
-                ShuttleMove('a', gameTime);
-
-            if (kState.IsKeyDown(Keys.D))
-                ShuttleMove('d', gameTime);
-
             base.Update(gameTime);
         }
-
-        void ShuttleMove(char key,GameTime gameTime)
+        
+        class Shuttle
         {
-            switch (key)
+            private Vector2 shuttlePos;
+            private float shuttleSpd;
+            private float shuttleDrct;
+            void ShuttleMove(char key,GameTime gameTime)
             {
-                case 'w':
-                    shuttlePos.Y -= shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    if (shuttleDrct != 0)
-                    {
-                        if (shuttleDrct < 4)
+                switch (key)
+                {
+                    case 'w':
+                        shuttlePos.Y -= shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        if (shuttleDrct != 0)
                         {
-                            shuttleDrct -= 1f * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                        }
-                        if (shuttleDrct > -0.001 && shuttleDrct < 0.001)
-                        {
-                            shuttleDrct = 0;
-                        }
-                        if (shuttleDrct > 7)
-                        {
-                            shuttleDrct -= 7;
-                            shuttleDrct *= -1;
-                        }
-                        if (shuttleDrct >=4)
-                        {
-                            shuttleDrct += 1f * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                        }
-                    }
-                    break;                
-                case 'a':
-                    shuttlePos.X -= shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-                    break;
-                case 's':
-                    shuttlePos.Y += shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    break;
-                case 'd':
-                    shuttlePos.X += shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    break;
+                        }
+                        break;                
+                    case 'a':
+                        shuttlePos.X -= shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+                        break;
+                    case 's':
+                        shuttlePos.Y += shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        break;
+                    case 'd':
+                        shuttlePos.X += shuttleSpd * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        break;
+
+                }
             }
         }
+
+        
 
         protected override void Draw(GameTime gameTime)
         {
@@ -146,7 +128,7 @@ namespace Game1Game
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
             _spriteBatch.Draw(stars,
-                              new Rectangle(0,0,800,480),
+                              new Rectangle(0,0,1280,500),
                               Color.White);
 
             _spriteBatch.Draw(earth, 
