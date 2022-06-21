@@ -34,21 +34,15 @@ namespace simpleGAme
 
                 if (n)
                 {
-                    if (n && w)
-                        shuttleDirection = rad * 315;
-                    else if (n && e)
-                        shuttleDirection = rad * 45;
-                    else
-                        shuttleDirection = rad * 0;
+                    if (n && w)         shuttleDirection = rad * 315;
+                    else if (n && e)    shuttleDirection = rad * 45;
+                    else                shuttleDirection = rad * 0;
                 }
                 if (s)
                 {
-                    if (s && w)
-                        shuttleDirection = rad * 225;
-                    else if (s && e)
-                        shuttleDirection = rad * 135;
-                    else
-                        shuttleDirection = rad * 180;
+                    if (s && w)         shuttleDirection = rad * 225;
+                    else if (s && e)    shuttleDirection = rad * 135;
+                    else                shuttleDirection = rad * 180;
                 }
             }
             
@@ -58,7 +52,7 @@ namespace simpleGAme
         {
             sb.Begin();
             {
-                sb.Draw(texture, shuttlePos, null, Color.White, shuttleDirection, new Vector2(texture.Width / 2, texture.Height / 2), Vector2.One, SpriteEffects.None, 0f);
+                sb.Draw(texture, shuttlePos, null, Color.White, shuttleDirection, new Vector2(texture.Width / 2, texture.Height / 2), 0.2f, SpriteEffects.None, 0f);
             }
             sb.End();
         }
