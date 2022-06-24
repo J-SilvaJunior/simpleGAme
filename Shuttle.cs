@@ -14,6 +14,7 @@ namespace simpleGAme
 
         public Shuttle(Texture2D texture, Vector2 shuttlePos)
         {
+            //Inicializa o objeto do jogador
             this.shuttlePos = shuttlePos;
             this.texture = texture;
             this.shuttleSpd = 300f;
@@ -52,7 +53,16 @@ namespace simpleGAme
         {
             sb.Begin();
             {
-                sb.Draw(texture, shuttlePos, null, Color.White, shuttleDirection, new Vector2(texture.Width / 2, texture.Height / 2), 0.2f, SpriteEffects.None, 0f);
+                sb.Draw(texture, 
+                        shuttlePos,
+                        null,
+                        Color.White,
+                        shuttleDirection,
+                        new Vector2(texture.Width / 2,
+                                    texture.Height / 2),
+                        0.2f,
+                        SpriteEffects.None,
+                        0f);
             }
             sb.End();
         }
