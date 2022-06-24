@@ -12,36 +12,17 @@ namespace simpleGAme
         private SpriteBatch _spriteBatch;           //Desenhador de Sprite, é inicializado recebendo como argumento uma
                                                     //instância de GraphicsDeviceManager. É o responsável por desenhar
                                                     //sprites na tela.
-                                                    
-        
-        private Color cl = Color.Blue;              //CL = Cor, utilizei para alterar, em testes, a cor da tela. 
-                                                    //O Template vem como padrão Color.CornflowerBlue.
-                                                    
         private Shuttle shuttle;                    //É a variável de Textura 2D para a Nave, é a penúltima a ser desenhada,
                                                     //antes do texto. Texture2D neste projeto são inicilizadas em
                                                     //this.LoadContent(), dentro dele utilizando
                                                     //Content.Load<T>(String nomeDoAsset), onde T é o tipo que ele vai
                                                     //inicializar, neste caso,
                                                     //shuttle = Content.Load<Texture2D>("shuttle")
-                                                    
-        private Texture2D stars;                    //É a variável de Textura 2D para o Background Estrelado
-                                                    //Como Background, ela deve ser a primeira a ser desenhada.
-                                                    
-        private Texture2D earth;                    //É a variável de Textura 2D para a Terra, é a segunda a ser desenhada
 
         private Background[] bg = new Background[2];//instância não inicializada do background
                                                     
         private SpriteFont font;                    //Variável que guarda uma fonte e seus caractéres na memória
                                                     //devido a necessidade de guardar ela como sprites.
-                                                    //
-        //private Vector2 shuttlePos;               //Posição da nave no espaço, como Vector2, ou seja, posição X e Y
-                                                    //para pegar o centro da tela, deve se utilizar, após a inicialização
-                                                    //dos gráficos, na instância de GraphicsDeviceManager, os dois valores
-                                                    //(_graphics.PreferredBackBufferWidth  / 2) e,
-                                                    //(_graphics.PreferredBackBufferHeight / 2) . 
-                                                    //
-        //private float shuttleSpd                  //Velocidade da nave. Quando utilizada, deve ser multiplicada por
-                                                    //(float)GameTime.ElapsedGameTime.TotalSeconds .
                                                     
            public Game1()
         {
@@ -91,7 +72,7 @@ namespace simpleGAme
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(cl);
+            GraphicsDevice.Clear(Color.Wheat);
             for (int i = 0; i < bg.Length; i++)
             {
                 bg[i].Draw(_spriteBatch);
