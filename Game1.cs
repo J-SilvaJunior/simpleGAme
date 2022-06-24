@@ -7,24 +7,23 @@ namespace simpleGAme
 {
     public class Game1 : Game
     {
+        private const string HMS = "hh:mm:ss";
         private GraphicsDeviceManager _graphics;    //Gerenciador de gráficos, é inicializado no construtor da classe.
                                                     
         private SpriteBatch _spriteBatch;           //Desenhador de Sprite, é inicializado recebendo como argumento uma
                                                     //instância de GraphicsDeviceManager. É o responsável por desenhar
                                                     //sprites na tela.
-        private Shuttle shuttle;                    //É a variável de Textura 2D para a Nave, é a penúltima a ser desenhada,
-                                                    //antes do texto. Texture2D neste projeto são inicilizadas em
-                                                    //this.LoadContent(), dentro dele utilizando
-                                                    //Content.Load<T>(String nomeDoAsset), onde T é o tipo que ele vai
-                                                    //inicializar, neste caso,
-                                                    //shuttle = Content.Load<Texture2D>("shuttle")
+        private Shuttle shuttle;                    //É uma instância de classe para a Nave, sendo desenhada com
+                                                    //shuttle.Draw()
 
-        private Background[] bg = new Background[2];//instância não inicializada do background
+        private Background[] bg = new Background[2];//instância vetorizada não inicializada de Background, para
+                                                    //que seja possível armazenar múltiplos elementos de background
+                                                    //em série
                                                     
         private SpriteFont font;                    //Variável que guarda uma fonte e seus caractéres na memória
                                                     //devido a necessidade de guardar ela como sprites.
                                                     
-           public Game1()
+        public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -83,9 +82,10 @@ namespace simpleGAme
             Vector2 centroTexto = Vector2.Zero; //font.MeasureString("Joguinho de nave feito\nfeito para fins de estudo") / 2;
             Vector2 posicaoCentral = new Vector2(0,
                                                  0);
+            string _hms = gameTime.TotalGameTime.ToString().Substring(0,8);
             _spriteBatch.Begin();
             _spriteBatch.DrawString(font,
-                                    "Joguinho de nave feito\nfeito para fins de estudo",
+                                    $"Joguinho de nave feito\nfeito para fins de estudo\nTempo de jogo:{_hms}",
                                     posicaoCentral,
                                     Color.White,
                                     0,
