@@ -1,4 +1,9 @@
-﻿//Este projeto é um estudo do XNA MonoGame 
+﻿//Este projeto é um estudo do XNA MonoGame
+//Sinta-se livre para ver e editar o código
+//O trabalho aqui está feito, e irei partir
+//para outro pequeno caso de estudo.
+//
+//
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
